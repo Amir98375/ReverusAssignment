@@ -100,5 +100,21 @@ body{
   .divButton button {
       width: 100%; /* Make buttons take full width on smaller screens */
   }
+  .container{
+    width: 80%;
+    margin: auto;
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+  .divButton button {
+      width: 100%; /* Make buttons take full width on smaller screens */
+  }
+  .container{
+    width: 100%;
+    margin: auto;
+  }
+  
 }
 
