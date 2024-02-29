@@ -1,38 +1,104 @@
-.App {
-  text-align: center;
+
+.inputTag{
+  height: 30px;
+  width: 100%;
+
+  border-radius: 20px;
+  color:black;
+}
+.container{
+  width: 30%;
+  margin: auto;
+}
+.containerTodo{
+  margin-top: 50px;
+  background-color:white;
+  width: 100%;
+  overflow: auto; /* Enable scrolling if content overflows */
+  border: 1px solid #ccc; /* Just for visualization */
+
+  height: 50vh; /* Set the height of the container */
+  
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.containerTodo div {
+  display: flex; /* Make inputs block elements */
+  /* Add some spacing between inputs */
+  height: 50px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid grey;
+  background-color: #24273d;
+  width: 100%;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+ 
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.containerTodo input[type="text"] {
+  display: block; /* Make inputs block elements */
+  /* Add some spacing between inputs */
+  height: 100%;
+ 
+
   color: white;
+border: none;
+
+  width: 95%;
 }
 
-.App-link {
-  color: #61dafb;
+
+.container input[type="checkbox"] {
+ background-color: white;
+
+  appearance: none; /* Remove default appearance */
+  -webkit-appearance: none; /* For older versions of Safari */
+  -moz-appearance: none; /* For older versions of Firefox */
+  width: 20px; /* Set width of checkbox */
+  height: 20px; /* Set height of checkbox */
+  border-radius: 50%; /* Make the checkbox round */
+  outline: none; /* Remove default outline */
+  border: 1px solid #999; /* Add border */
+  cursor: pointer; /* Show pointer cursor on hover */
+  
+}
+input[type="checkbox"]:checked {
+  background-color:blue; /* Change background color when checked */
+}
+body{
+  background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29tcHV0ZXJzfGVufDB8fDB8fHww'); /* Replace 'path/to/your/image.jpg' with the path to your image */
+  background-size: 100% auto;
+  background-repeat: no-repeat; 
+
+  margin: 0;
+  padding: 0; 
+  width:100%;
+  background-color: black;
+
+    
+}
+.divButton {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+ margin-top: 5px;
+ background-color: #999;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.divButton button {
+  flex: 1;
+   margin: 2px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+
+}
+
+/* Responsive styles */
+@media screen and (max-width: 600px) {
+  .divButton button {
+      width: 100%; /* Make buttons take full width on smaller screens */
   }
 }
+
