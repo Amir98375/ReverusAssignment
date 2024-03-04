@@ -7,7 +7,7 @@ function App() {
   const [imageUri, setImageUri] = useState(null);
   return (
     <div className="App">
-      <div
+      {/* <div
         style={{
           height: "200px",
           width: "200px",
@@ -26,9 +26,9 @@ function App() {
       >
         <button onClick={() => setCameraFlag(!cameraFlag)}>Take pic</button>
       </div>
-      {cameraFlag ? <CameraComponent /> : ""}
+      {cameraFlag ? <CameraComponent /> : ""} */}
 
-      {/* <Todo/> */}
+      <Todo/>
     </div>
   );
 }
