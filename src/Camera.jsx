@@ -50,7 +50,7 @@ function CameraComponent (props) {
       isSilentMode = {false}
       isDisplayStartCameraError = {true}
       isFullscreen = {false}
-      sizeFactor = {1}
+      sizeFactor = {0.5}
       onCameraStart = { (stream) => { handleCameraStart(stream); } }
       onCameraStop = { () => { handleCameraStop(); } }
     />
