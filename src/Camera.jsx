@@ -1,9 +1,10 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import Camera, { FACING_MODES, IMAGE_TYPES } from 'react-html5-camera-photo';
 // import 'react-html5-camera-photo/build/css/index.css';
 
 function CameraComponent (props) {
+    const [facingMode, setFacingMode] = useState(FACING_MODES.ENVIRONMENT);
   function handleTakePhoto (dataUri) {
     // Do stuff with the photo...
     console.log('takePhoto');
@@ -26,7 +27,16 @@ function CameraComponent (props) {
     console.log('handleCameraStop');
   }
 
+
+  function toggleFacingMode() {
+    setFacingMode(
+      facingMode === FACING_MODES.USER ? FACING_MODES.ENVIRONMENT : FACING_MODES.USER
+    );
+  }
+
   return (
+<>
+<button onClick={toggleFacingMode}>Flip Camera</button>
     <Camera
       onTakePhoto = { (dataUri) => { handleTakePhoto(dataUri); } }
       onTakePhotoAnimationDone = { (dataUri) => { handleTakePhotoAnimationDone(dataUri); } }
@@ -44,6 +54,7 @@ function CameraComponent (props) {
       onCameraStart = { (stream) => { handleCameraStart(stream); } }
       onCameraStop = { () => { handleCameraStop(); } }
     />
+</>
   );
 }
 
