@@ -1,18 +1,22 @@
 
 import React, { useState } from 'react';
 import Camera, { FACING_MODES, IMAGE_TYPES } from 'react-html5-camera-photo';
+import { ImagePreview } from './imagePreview';
 // import 'react-html5-camera-photo/build/css/index.css';
 
 function CameraComponent (props) {
     const [facingMode, setFacingMode] = useState(FACING_MODES.USER);
-  function handleTakePhoto (dataUri) {
-    // Do stuff with the photo...
-    console.log('takePhoto');
-  }
+    const [capturedImageURI, setCapturedImageURI] = useState(null);
+
+    function handleTakePhoto(dataUri) {
+      setCapturedImageURI(dataUri); // Store the captured image URI in state
+    }
+
 
   function handleTakePhotoAnimationDone (dataUri) {
     // Do stuff with the photo...
-    console.log('takePhoto');
+    // console.log('takePhoto');
+    setCapturedImageURI(dataUri); 
   }
 
   function handleCameraError (error) {
@@ -34,9 +38,19 @@ function CameraComponent (props) {
     );
   }
 
+
   return (
 <>
+   {
+    (capturedImageURI)
+      ? <ImagePreview dataUri={capturedImageURI}
+        // isFullscreen={isFullscreen}
+      />
+
+:
+<>
 <button onClick={toggleFacingMode}>Flip Camera</button>
+
     <Camera
       onTakePhoto = { (dataUri) => { handleTakePhoto(dataUri); } }
       onTakePhotoAnimationDone = { (dataUri) => { handleTakePhotoAnimationDone(dataUri); } }
@@ -53,7 +67,8 @@ function CameraComponent (props) {
       sizeFactor = {0.5}
       onCameraStart = { (stream) => { handleCameraStart(stream); } }
       onCameraStop = { () => { handleCameraStop(); } }
-    />
+    /></>
+   }
 </>
   );
 }
