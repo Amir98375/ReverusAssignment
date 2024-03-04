@@ -4,7 +4,7 @@ import Camera, { FACING_MODES, IMAGE_TYPES } from 'react-html5-camera-photo';
 // import 'react-html5-camera-photo/build/css/index.css';
 
 function CameraComponent (props) {
-    const [facingMode, setFacingMode] = useState(FACING_MODES.ENVIRONMENT);
+    const [facingMode, setFacingMode] = useState(FACING_MODES.USER);
   function handleTakePhoto (dataUri) {
     // Do stuff with the photo...
     console.log('takePhoto');
