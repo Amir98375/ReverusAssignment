@@ -1,0 +1,56 @@
+/* styles/styles.css */
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #333; /* Dark gray color */
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc; /* Light gray border */
+  }
+  
+  .button {
+    padding: 0.5rem 1rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .error {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .result {
+    opacity: 0; /* Initially hide the result elements */
+    animation: fadeIn 0.5s ease-in-out forwards;
+    color: #4caf50; /* Green color */
+  }
+  
+  .result:nth-child(odd) {
+    animation-delay: 0.2s; /* Delay every odd result element by 0.2s */
+  }
+  

@@ -1,0 +1,36 @@
+/* styles/animations.css */
+
+@keyframes fadeInColor {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes colorChange {
+    0% {
+      color: #4caf50; /* Initial color (green) */
+    }
+    50% {
+      color: #f44336; /* Midpoint color (red) */
+    }
+    100% {
+      color: #2196f3; /* Final color (blue) */
+    }
+  }
+  
+  .result {
+    opacity: 0; /* Initially hide the result elements */
+    animation: fadeInColor 0.5s ease-in-out forwards;
+  }
+  
+  .result:nth-child(odd) {
+    animation-delay: 0.2s; /* Delay every odd result element by 0.2s */
+  }
+  
+  .result {
+    animation: fadeInColor 0.5s ease-in-out forwards, colorChange 5s infinite; /* Apply both fadeIn and colorChange animations */
+  }
+  

@@ -67,14 +67,15 @@ input[type="checkbox"]:checked {
   background-color:blue; /* Change background color when checked */
 }
 body{
-  background-image: url(../public/bg-desktop-dark.jpg); /* Replace 'path/to/your/image.jpg' with the path to your image */
+  /* background-image: url(../public/bg-desktop-dark.jpg);  */
+  /* Replace 'path/to/your/image.jpg' with the path to your image */
   background-size: 100% auto;
   background-repeat: no-repeat; 
 
   margin: 0;
   padding: 0; 
   width:100%;
-  background-color: black;
+  /* background-color: black; */
 
     
 }

@@ -1,12 +1,14 @@
 import { useState } from "react";
 import CameraComponent from "./Camera";
 import Todo from "./Todo";
+import Home from "./Home.jsx";
+
 
 function App() {
   const [cameraFlag, setCameraFlag] = useState(false);
   const [imageUri, setImageUri] = useState(null);
   return (
-    <div className="App">
+    <div >
       {/* <div
         style={{
           height: "200px",
@@ -28,7 +30,8 @@ function App() {
       </div>
       {cameraFlag ? <CameraComponent /> : ""} */}
 
-      <Todo/>
+      {/* <Todo/> */}
+      <Home/>
     </div>
   );
 }
